@@ -177,6 +177,8 @@ HINTS: you will need to AGGREGATE, GROUP BY, and filter...
 but remember, STRFTIME returns a STRING for your WHERE statement!! */
 
 SELECT customer_id,
+       STRFTIME('%m',market_date) AS purchase_month,
+       STRFTIME('%Y', market_date) AS purchase_year,
        SUM(quantity * cost_to_customer_per_qty) AS total_spent
 FROM customer_purchases
 WHERE STRFTIME('%m', market_date) = '04'
