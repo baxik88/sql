@@ -4,8 +4,8 @@ In a Type 1 Slowly Changing Dimension (SCD), each address change is recorded as 
 
 ## Table Structure
 
-- **CustomerAddresses_Type2**
-  - `address_id` (PK, auto-increment)
+- **CustomerAddresses_Type1**
+  - `address_id` (PK, auto-increment) 
   - `customer_id` (FK to `Customer`)
   - `address_line1`, `address_line2`, `city`, `state`, `zip_code`
   - `effective_start_date`
@@ -25,6 +25,6 @@ SELECT
   a.address_line1,
   a.effective_start_date,
   a.effective_end_date
-FROM CustomerAddresses_Type2 a
+FROM CustomerAddresses_Type1 a
 JOIN Customer c ON a.customer_id = c.customer_id
 ORDER BY c.customer_id, a.effective_start_date;
