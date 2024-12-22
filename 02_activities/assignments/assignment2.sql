@@ -1,4 +1,4 @@
-/* ASSIGNMENT 2 */
+/* ASSIGNMENT 2  <Igor Bak> */
 /* SECTION 2 */
 
 -- COALESCE
